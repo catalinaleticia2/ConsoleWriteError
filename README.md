@@ -1,0 +1,2 @@
+# ConsoleWriteError
+#Region ;**** Directives created by AutoIt3Wrapper_GUI **** #AutoIt3Wrapper_UseX64=y #EndRegion ;**** Directives created by AutoIt3Wrapper_GUI ****  Opt("MustDeclareVars", 1)  #include &lt;Misc.au3> #include "emgucv-autoit-bindings\cve_extra.au3"  ; Open the library _OpenCV_DLLOpen("libemgucv-windesktop-4.5.3.4721\libs\x64\cvextern.dll")  Local $iCamId = 0 Local $cap = _cveVideoCaptureCreateFromDevice($iCamId, $CV_CAP_ANY, 0) If Not _cveVideoCaptureIsOpened($cap) Then     ConsoleWriteError("!>Error: cannot open the camera." &amp; @CRLF)     Exit
